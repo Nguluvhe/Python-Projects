@@ -11,6 +11,8 @@ column_map = {
     "Purchase_Cost": "Purchase Rate"
 }
 
+df2_rename = df2.rename(columns=column_map)
+
 
 
 
