@@ -15,7 +15,7 @@ column_map = {
 #rename the columns using the map template
 df2_rename = df2.rename(columns=column_map)
 
-merge_df = pd.concat([df1, df2_rename,] ignore_index=True)
+merge_df = pd.concat([df1, df2_rename], ignore_index=True)
 
 merge_df.to_csv("F:\Project\Python\merge_csv.csv", index=False, encoding="utf-8")
 
