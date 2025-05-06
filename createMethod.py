@@ -1,3 +1,5 @@
+import pandas as pd
+
 class Person:
     def __init__(self, fname, lname, age):
         self.firstname = fname
@@ -13,6 +15,16 @@ class Employee(Person):
     def myPrint(self):
         print("Name: " + self.firstname + "\nLast Name: " + self.lastname + "\nAge: " + str(self.age) + " years old")
         print("Employee Number: " + str(self.employeeNumber) + "\nEmployee Role: " + self.employeeRole)
+        data = {"First Name": [self.firstname], 
+                "Last Name": [self.lastname], 
+                "Age": [str(self.age)], 
+                "Employee Number": [str(self.employeeNumber)],
+                "Employee Role": [self.employeeRole]
+                }
+        df = pd.DataFrame(data)
+        
+        df.to_csv("F:\Project\Python\create_csv.csv", index=False, encoding="utf-8")
+        
         if self.age > 50:
             print("This person is old damn!!\n")
         else:
@@ -29,8 +41,8 @@ lsEmp = [Employee("Kelvin", "Setho", 55, 10, "Cleaner"), Employee("Gaze", "Blow"
 a = len(lsEmp)
 b = 0
 while a > 0:
-    
     lsEmp[b].myPrint()
     b += 1
     a -= 1
-    
+#create a dataframe using the employee list
+
