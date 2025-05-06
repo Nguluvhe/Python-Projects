@@ -13,8 +13,11 @@ class Employee(Person):
         self.employeeRole = erole
 
     def myPrint(self):
-        print("Name: " + self.firstname + "\nLast Name: " + self.lastname + "\nAge: " + str(self.age) + " years old")
-        print("Employee Number: " + str(self.employeeNumber) + "\nEmployee Role: " + self.employeeRole)
+        #print("Name: " + self.firstname + "\nLast Name: " + self.lastname + "\nAge: " + str(self.age) + " years old")
+        #print("Employee Number: " + str(self.employeeNumber) + "\nEmployee Role: " + self.employeeRole)
+        column_map = {
+            "First Name",
+        } 
         data = {"First Name": [self.firstname], 
                 "Last Name": [self.lastname], 
                 "Age": [str(self.age)], 
@@ -23,12 +26,12 @@ class Employee(Person):
                 }
         df = pd.DataFrame(data)
         
-        df.to_csv("F:\Project\Python\create_csv.csv", index=False, encoding="utf-8")
+        df.to_csv("F:\Project\Python\create_csv.csv", mode="a", index=False, encoding="utf-8")
         
-        if self.age > 50:
-            print("This person is old damn!!\n")
-        else:
-            print("This peron is young\n")
+        #if self.age > 50:
+            #print("This person is old damn!!\n")
+        #else:
+            #print("This peron is young\n")
 
 #p1 = Employee("Kelvin", "Setho", 55, 10, "Cleaner")
 #p2 = Employee("Gaze", "Blow", 18, 66, "Programmer")
